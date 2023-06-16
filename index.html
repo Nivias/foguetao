@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    #earth {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-image: url('earth.png');
+      background-size: cover;
+      animation: rotate 20s linear infinite;
+    }
+
+    #moon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-image: url('moon.png');
+      background-size: cover;
+      animation: orbit 5s linear infinite;
+    }
+
+    #rocket {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      width: 20px;
+      height: 50px;
+      background-color: #ff9900;
+      transform-origin: bottom;
+      animation: launch 5s ease-in-out infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes orbit {
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg); }
+       100% { transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg); }
+    }
+
+    @keyframes launch {
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateY(0); }
+      50% { transform: translate(-50%, -50%) rotate(0deg) translateY(-100px); }
+      51% { transform: translate(-50%, -50%) rotate(0deg) translateY(-100px); }
+      100% { transform: translate(-50%, -50%) rotate(0deg) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="earth"></div>
+  <div id="moon"></div>
+  <div id="rocket"></div>
+</body>
+</html>
